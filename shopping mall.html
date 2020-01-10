@@ -25,24 +25,54 @@
     }
 
     .wrap {
-      width: 900px;
+      width: 600px;
       margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    
+    .dis {
+      display: inline;
+    }
+
   </style>
 </head>
 <body> 
   <div class="wrap">
     <img src="">
-    <div>
-      <h3>상품 제목</h3> <p>가격:00원/개</p>
-    </div>
+    <h3>상품 제목</h3> 
+    <p>가격:00원/개</p>
     <p class="lead">
       상품 설명
     </p>
+    <hr class="my-4"></hr>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">주문자 성함</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
 
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">주소</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">전화번호</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+
+    <button type="button" class="btn btn-primary">주문하기</button>
   </div>
+</div>
 
 </body>
 </html>
