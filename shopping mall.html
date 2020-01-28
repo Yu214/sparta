@@ -33,44 +33,85 @@
       justify-content: center;
     }
 
-    .dis {
-      display: inline;
+
+    .infostyle {
+
+      text-align: center;
+      color: #848484;
+    }
+
+    .titlestyle {
+      color: #BDBDBD;
+      font-size: 30px;
+      text-shadow: 2px 2px 2px gray;
     }
 
   </style>
 </head>
 <body> 
   <div class="wrap">
-    <img src="">
-    <h3>상품 제목</h3> 
-    <p>가격:00원/개</p>
-    <p class="lead">
-      상품 설명
+    <img src="http://image.lotte.com/goods/15/04/89/51/6/651890415_1_550.jpg" width="330px"; height="300px";>
+    <hr class="my-1"></hr>
+
+    <h4 class="titlestyle">소프트 보아 플리스</h4> <p>가격: 28,000원</p>
+    <hr class="my-1"></hr>
+    <p class="infostyle">
+
+    <h4 class="customtitle">소프트 보아 플리스</h4> <p>가격: 28,000원</p>
+    <hr class="my-1"></hr>
+    <p class="customfont">
+      신축성이 좋고 가볍고 따뜻한, 세 마리 토끼를 다 잡은 올인원 플리스 입니다. 2XL까지 제작되어 큰 아이들도 입을 수 있고 보들보들 촉감이 좋아 아이들이 너무너무 좋아해요! 
+      지퍼 안 쪽에 털끼임 방지 원단이 덧대어져 있어서 안전하고 둥근 카라로 목이 더 편안하고 부드러워요.
     </p>
-    <hr class="my-4"></hr>
-    <div class="input-group input-group-sm mb-3">
+    <hr class="my-1"></hr>
+    <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">주문자 성함</span>
+        <span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
       </div>
-      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
     </div>
 
-    <div class="input-group input-group-sm mb-3">
+    <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">주소</span>
+        <label class="input-group-text" for="inputGroupSelect01">개수</label>
       </div>
-      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
     </div>
 
-    <div class="input-group input-group-sm mb-3">
+    <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">전화번호</span>
+        <label class="input-group-text" for="inputGroupSelect01">색상</label>
       </div>
-      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected></option>
+        <option value="1">분홍색</option>
+        <option value="2">흰색</option>
+      </select>
     </div>
 
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
 
-    <button type="button" class="btn btn-primary">주문하기</button>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <button type="button" class="btn btn-secondary">주문하기</button>
   </div>
 </div>
 
