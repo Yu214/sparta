@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- Webpage Title -->
+  <title>Shopping mall</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+
+  <script type="text/javascript">
+    function cellphone(p) {
+      var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
+      return regExp.test(p);
+    }
+    //너무 어렵다,,복습 꼭하기,,,
+
+    function order() {
+      let name = $('#order_name').val();
+      let count = $('#order_count').val();
+      let address = $('#order_address').val();
+      let phone = $('#order_phone').val();
+
+      if (name == ''){
+        alert('이름을 입력해주세요')
+        $('#order_name').focus()
+        return
+      } else if (count == ''){
+        alert('수량을 입력해주세요')
+        $('#order_count').focus()
+        return
+      } else if (address == ''){
+        alert('주소를 입력해주세요')
+        $('#order_address').focus()
+        return
+      } else if (phone == ''){
+        alert('휴대폰번호를 입력해주세요')
+        $('#order_phone').focus()
+        return
+      } else if (!cellphone(phone)) {
+        alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요')
+        return
+      } else { alert('주문 완료!');
+
+    }
+  }
+
+  </script>
+<style type="text/css">
+
+  * {
+    font-family: 'Jua', sans-serif;
+  }
+
+  .wrap {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .infostyle {
+    text-align: center;
+    color: #848484;
+  }
+
+  .titlestyle {
+    color: #BDBDBD;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px gray;
+  }
+  .order {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+
+</style>
+</head>
+<body> 
+  <div class="wrap">
+    <img src="http://image.lotte.com/goods/15/04/89/51/6/651890415_1_550.jpg" width="330px"; height="300px";>
+    <hr class="my-1"></hr>
+    <h4 class="titlestyle">소프트 보아 플리스</h4> <p>가격: 28,000원</p>
+    <hr class="my-1"></hr>
+    <p class="infostyle">
+      신축성이 좋고 가볍고 따뜻한, 세 마리 토끼를 다 잡은 올인원 플리스 입니다. 2XL까지 제작되어 큰 아이들도 입을 수 있고 보들보들 촉감이 좋아 아이들이 너무너무 좋아해요! 
+      지퍼 안 쪽에 털끼임 방지 원단이 덧대어져 있어서 안전하고 둥근 카라로 목이 더 편안하고 부드러워요.
+    </p>
+    <hr class="my-1"></hr>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
+      </div>
+      <input type="text" class="form-control" id="order_name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">개수</label>
+      </div>
+      <select class="custom-select" id="order_count">
+        <option selected>--수량을 선택하세요--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+      </div>
+      <input type="text" class="form-control" id="order_address" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+      </div>
+      <input type="text" class="form-control" id="order_phone" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <button onclick="order()" type="button" class="btn btn-secondary">주문하기</button>
+  </div>
+
+</body>
+</html>
