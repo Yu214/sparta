@@ -49,20 +49,49 @@
       } else if (!isCellPhone(phone)) {
         alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요')
         return
-      } else { alert('주문 완료!');
+      } else { 
+        alert('주문 완료!');
+        listing();
 
-      var temp_html = '<tr>\
-      <td>'+ name + '</td>\
-      <td>'+ count + '</td>\
-      <td>'+ address + '</td>\
-      <td>'+ phone + '</td>\
-      </tr>';
-      $('#orders-box').append(temp_html);
-      return
       }
   }
 
-  </script>
+    $(document).ready(function(){
+    $('#orders-box').html('');
+    //listing();
+  });
+
+  function listing() {
+    $.ajax({
+      type: "GET",
+      url: "http://spartacodingclub.shop/order",
+      data: {},
+      success: function(response){
+        if (response['result'] == 'successs') {
+          let orders = response['orders'];
+          console.log(orders);
+          for (let i = 0; i < orders.length; i++) {
+            make_card(orders[i]['name'],orders[i]['count'],orders[i]['address'],orders[i]['phone'])
+          }
+        } else {
+          alert('받아오지 못했습니다');
+        }
+      }
+    })
+  }
+
+  function make_card(name, count, address, phone) {
+    let temp_html = '<tr>\
+    <td>' + name + '</td>\
+    <td>' + count + '</td>\
+    <td>' + address + '</td>\
+    <td>' + phone + '</td>\
+    </tr>';
+    $('#orders-box').append(temp_html);
+
+  }
+
+</script>
 <style type="text/css">
 
   * {
