@@ -19,11 +19,10 @@
   <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
 
   <script type="text/javascript">
-    function cellphone(p) {
+    function isCellPhone(p) {
       var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
       return regExp.test(p);
     }
-    //너무 어렵다,,복습 꼭하기,,,
 
     function order() {
       let name = $('#order_name').val();
@@ -47,15 +46,23 @@
         alert('휴대폰번호를 입력해주세요')
         $('#order_phone').focus()
         return
-      } else if (!cellphone(phone)) {
+      } else if (!isCellPhone(phone)) {
         alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요')
         return
       } else { alert('주문 완료!');
 
-    }
+      var temp_html = '<tr>\
+      <td>'+ name + '</td>\
+      <td>'+ count + '</td>\
+      <td>'+ address + '</td>\
+      <td>'+ phone + '</td>\
+      </tr>';
+      $('#orders_box').append(temp_html);
+      return
+      }
   }
 
-  </script>
+</script>
 <style type="text/css">
 
   * {
@@ -84,6 +91,10 @@
   .order {
     margin-top: 20px;
     text-align: center;
+  }
+
+  .orders {
+    margin-top: 100px;
   }
 
 
@@ -136,8 +147,25 @@
       <input type="text" class="form-control" id="order_phone" aria-label="Default" aria-describedby="inputGroup-sizing-default">
     </div>
 
+    <div>
     <button onclick="order()" type="button" class="btn btn-secondary">주문하기</button>
   </div>
+
+  <div class="orders">
+    <table class="table">
+      <thead>
+        <tr class="all table-active">
+          <td scope="col"> 이름 </td>
+          <td scope="col"> 수량 </td>
+          <td scope="col"> 주소 </td>
+          <td scope="col"> 전화번호 </td>
+        </tr>
+      </thead>
+      <tbody id="orders-box">
+              </tbody>
+    </table>
+  </div>
+</div>
 
 </body>
 </html>
